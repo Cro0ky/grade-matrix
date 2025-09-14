@@ -1,4 +1,5 @@
 import { Button } from "@/shared/ui/button/button.tsx";
+import { Header, Sidebar } from "@/widgets";
 import cn from "classnames";
 import { UndoIcon } from "lucide-react";
 import type { FC, HTMLAttributes } from "react";
@@ -19,6 +20,8 @@ export const Layout: FC<LayoutProps> = ({
   const navigate = useNavigate();
   return (
     <div className={cn(styles.layout, className)} {...props}>
+      <Header />
+      <Sidebar />
       <div className={styles.head}>
         {title && <span className={styles.title}>{title}</span>}
         <Button

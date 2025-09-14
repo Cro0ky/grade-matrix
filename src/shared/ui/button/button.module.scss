@@ -49,16 +49,16 @@
 }
 
 .primary {
-  background-color: $merino;
+  background-color: $white;
   border: 1px solid $dark-blue;
   @include font($size_l, 600, 22px, $gondola, 0.25px);
 
   &:hover {
-    background-color: $cyan-blue;
+    background-color: rgba(248, 248, 248, 0.42);
   }
 
   &:active {
-    background-color: $light-brown;
+    background-color: rgba(204, 190, 190, 0.42);
   }
 }
 .secondary {

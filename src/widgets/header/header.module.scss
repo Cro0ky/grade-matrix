@@ -26,17 +26,16 @@
       cursor: pointer;
     }
 
-    .links {
-      @include flex(center, $gap: 10px);
+    .dropdown {
+      @include flex(center, center);
+      padding: 6px 5px 6px 6px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: 0.2s;
 
-      .link {
-        cursor: pointer;
-        font-size: $size_l;
-        transition: 0.2s;
-
-        &:hover {
-          text-decoration: underline;
-        }
+      &:hover {
+        background-color: rgba(248, 248, 248, 0.42);
       }
     }
   }
