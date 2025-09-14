@@ -1,0 +1,36 @@
+@use "@/app/styles/colors" as *;
+@use "@/app/styles/mixins" as *;
+@use "@/app/styles/text-size" as *;
+
+.layout {
+  box-shadow: 0 0 12px $tory-blue;
+  height: calc(100vh - 150px);
+  background-color: $white;
+  object-fit: contain;
+  border-radius: 20px;
+  margin: 90px auto;
+  max-width: 1200px;
+  padding: 20px;
+  width: 100%;
+
+  .head {
+    @include flex(center, space-between, 10px);
+    position: relative;
+
+    .close_button {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .title {
+      font-size: $size_xm;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  .children {
+    margin-top: 30px;
+  }
+}

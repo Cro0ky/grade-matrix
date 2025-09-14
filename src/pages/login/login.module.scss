@@ -1,0 +1,13 @@
+@use "@/app/styles/mixins" as *;
+
+.layout {
+  max-width: 700px;
+  width: 100%;
+  max-height: 700px;
+  height: 100%;
+
+  .form {
+    @include flex(center, flex-start, 20px, column);
+    padding: 15px;
+  }
+}

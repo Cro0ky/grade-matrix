@@ -1,0 +1,10 @@
+@use "@/app/styles/colors" as *;
+
+.wrapper {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px $tory-blue;
+  max-width: 100%;
+  width: fit-content;
+}

@@ -1,0 +1,17 @@
+@use "@/app/styles/mixins" as *;
+
+.headCellContent {
+  @include flex(center, space-between);
+}
+
+.cell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 2px 16px;
+  height: 48px;
+  background: hsla(0, 4%, 51%, 0.22);
+}
+
+.head {
+  border-radius: 20px;
+}

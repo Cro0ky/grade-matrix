@@ -1,0 +1,137 @@
+@use "sass:color";
+@use "sass:map";
+@use "colors" as *;
+
+@mixin flex(
+  $align-items: flex-start,
+  $justify-items: flex-start,
+  $gap: 0,
+  $direction: row,
+  $wrap: nowrap
+) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-items;
+  flex-flow: $direction $wrap;
+  gap: $gap;
+}
+
+@mixin font(
+  $size,
+  $weight: 400,
+  $line-height: initial,
+  $color: inherit,
+  $letter-spacing: initial
+) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+  color: $color;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin size($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin position(
+  $position: null,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null,
+  $z-index: null
+) {
+  $properties: (
+    position: $position,
+    top: $top,
+    right: $right,
+    bottom: $bottom,
+    left: $left,
+    z-index: $z-index,
+  );
+  @each $property, $value in $properties {
+    @if $value {
+      #{$property}: $value;
+    }
+  }
+}
+
+$sm: 360px;
+
+// Small tablet
+$md: 640px;
+
+// Large tablet
+$lt: 992px;
+
+// Extra large
+$lx: 1200px;
+
+// Extra extra large
+$xxl: 1440px;
+
+// Large desktop
+$lg: 1920px;
+
+@mixin respond-from($media) {
+  @if $media == small {
+    @media only screen and (max-width: $sm) {
+      @content;
+    }
+  } @else if $media == medium {
+    @media only screen and (max-width: $md) {
+      @content;
+    }
+  } @else if $media == large {
+    @media only screen and (max-width: $lt) {
+      @content;
+    }
+  } @else if $media == extraLarge {
+    @media only screen and (max-width: $lx) {
+      @content;
+    }
+  } @else if $media == extraExtraLarge {
+    @media only screen and (max-width: $xxl) {
+      @content;
+    }
+  } @else if $media == largeDesktop {
+    @media only screen and (max-width: $lg) {
+      @content;
+    }
+  }
+}
+
+@mixin line-clamp($line) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $line;
+}
+
+@mixin background-image($url, $size, $repeat, $position) {
+  background: url($url);
+  background-size: $size;
+  background-repeat: $repeat;
+  background-position: $position;
+}
+
+@mixin scroll() {
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 7px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: $dark-brown;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: transparent;
+    padding: 10px 0;
+  }
+}

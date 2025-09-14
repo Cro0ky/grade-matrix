@@ -1,0 +1,19 @@
+@use "@/app/styles/colors" as *;
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+
+  th:first-child {
+    border-top-left-radius: 10px;
+  }
+
+  th:last-child {
+    border-top-right-radius: 10px;
+  }
+
+  th,
+  td {
+    border-bottom: 1px solid $bright-gray;
+  }
+}

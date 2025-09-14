@@ -1,0 +1,43 @@
+@use "@/app/styles/mixins" as *;
+@use "@/app/styles/colors" as *;
+@use "@/app/styles/text-size" as *;
+
+.header {
+  padding: 10px 40px;
+  @include flex(center);
+  position: fixed;
+  background-color: $bright-gray;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 0 12px $tory-blue;
+  height: 48px;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  .content {
+    @include flex(center, space-between);
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+
+    .title {
+      font-size: $size_xm;
+      cursor: pointer;
+    }
+
+    .links {
+      @include flex(center, $gap: 10px);
+
+      .link {
+        cursor: pointer;
+        font-size: $size_l;
+        transition: 0.2s;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

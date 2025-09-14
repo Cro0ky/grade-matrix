@@ -1,0 +1,26 @@
+.body {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0.1px;
+  position: relative;
+
+  .cellCheckbox {
+    width: 60px;
+    min-width: 60px;
+    max-width: 60px;
+
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .cell {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 2px 16px;
+    height: 48px;
+  }
+}
