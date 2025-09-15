@@ -13,6 +13,10 @@
   padding: 20px;
   width: 100%;
 
+  @media (max-width: 1300px) {
+    max-width: 1000px;
+  }
+
   .head {
     @include flex(center, space-between, 10px);
     position: relative;
