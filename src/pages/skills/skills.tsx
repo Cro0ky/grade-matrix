@@ -8,7 +8,9 @@ export const Skills = () => {
   return (
     <Layout title="Категории и навыки">
       <div className={styles.wrapper}>
+        <h1>Hard-skills</h1>
         <SkillsMapper skills={hardSkills} />
+        <h1>Soft-skills</h1>
         <SkillsMapper skills={softSkills} />
       </div>
     </Layout>

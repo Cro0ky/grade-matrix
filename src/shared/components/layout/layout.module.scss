@@ -3,8 +3,9 @@
 @use "@/app/styles/text-size" as *;
 
 .layout {
+  @include scroll();
   box-shadow: 0 0 12px $tory-blue;
-  height: calc(100vh - 150px);
+  height: calc(100vh - 200px);
   background-color: $white;
   object-fit: contain;
   border-radius: 20px;

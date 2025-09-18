@@ -1,7 +1,14 @@
 @use "@/app/styles/text-size" as *;
 @use "@/app/styles/mixins" as *;
+@use "@/app/styles/colors" as *;
 
 .wrapper {
   @include flex($gap: 30px, $direction: column);
   width: 100%;
+
+  h1 {
+    width: 100%;
+    color: #596d91;
+    text-align: center;
+  }
 }

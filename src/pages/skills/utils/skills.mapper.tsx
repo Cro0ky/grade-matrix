@@ -10,12 +10,14 @@ export const SkillsMapper: FC<ISkillsMapper> = ({ skills }) => {
   return skills.map(({ skills, category }) => (
     <div className={styles.wrapper}>
       <span className={styles.category}>{category}</span>
-      <div>
+      <div className={styles.skills}>
         {skills.map(({ skill, description, maximum_score }) => (
           <div className={styles.skill_wrapper}>
-            <span className={styles.skill}>{skill}</span>
-            <span className={styles.description}>{description}</span>
-            <span className={styles.maximum_score}>{maximum_score}</span>
+            <span className={styles.skill}>Навык: {skill}</span>
+            <span className={styles.description}>Описание: {description}</span>
+            <span className={styles.maximum_score}>
+              Максимальный балл: {maximum_score}
+            </span>
           </div>
         ))}
       </div>

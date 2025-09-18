@@ -1,0 +1,32 @@
+@use "@/app/styles/text-size" as *;
+@use "@/app/styles/colors" as *;
+@use "@/app/styles/mixins" as *;
+
+.wrapper {
+  @include flex(flex-start, $gap: 4px, $direction: column);
+
+  .category {
+    @include font($size_xm, 800);
+  }
+
+  .skills {
+    @include flex(flex-start, $gap: 4px, $direction: column);
+
+    .skill_wrapper {
+      @include flex(flex-start, $gap: 4px, $direction: column);
+      margin-bottom: 10px;
+
+      .skill {
+        @include font($size_l, 800, $color: #424040);
+      }
+
+      .description {
+        @include font($size_m, 800, $color: #424040);
+      }
+
+      .maximum_score {
+        @include font($size_l, 800, $color: #818181);
+      }
+    }
+  }
+}
