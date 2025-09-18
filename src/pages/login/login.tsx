@@ -29,41 +29,44 @@ export const Login = () => {
 
   return (
     <Layout className={styles.layout} title={"Войдите в аккаунт"}>
-      <div className={styles.wrapper}>
-        <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-          <Controller
-            name="login"
-            control={control}
-            render={({ field }) => (
-              <Input
-                {...field}
-                className={styles.textarea}
-                title={"Логин"}
-                placeholder={"Введите логин"}
-                value={field.value ?? ""}
-                error={!!errors.login}
-                errorText={errors.login?.message}
-              />
-            )}
-          />
-          <Controller
-            name="password"
-            control={control}
-            render={({ field }) => (
-              <Input
-                {...field}
-                className={styles.textarea}
-                title={"Пароль"}
-                placeholder={"Введите пароль"}
-                value={field.value ?? ""}
-                error={!!errors.password}
-                errorText={errors.password?.message}
-              />
-            )}
-          />
-          <Button htmlType={"submit"} children={"Войти"} disabled={!isValid} />
-        </form>
-      </div>
+      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+        <Controller
+          name="login"
+          control={control}
+          render={({ field }) => (
+            <Input
+              {...field}
+              className={styles.input}
+              title={"Логин"}
+              placeholder={"Введите логин"}
+              value={field.value ?? ""}
+              error={!!errors.login}
+              errorText={errors.login?.message}
+            />
+          )}
+        />
+        <Controller
+          name="password"
+          control={control}
+          render={({ field }) => (
+            <Input
+              {...field}
+              className={styles.input}
+              title={"Пароль"}
+              placeholder={"Введите пароль"}
+              value={field.value ?? ""}
+              error={!!errors.password}
+              errorText={errors.password?.message}
+            />
+          )}
+        />
+        <Button
+          className={styles.button}
+          htmlType={"submit"}
+          children={"Войти"}
+          disabled={!isValid}
+        />
+      </form>
     </Layout>
   );
 };

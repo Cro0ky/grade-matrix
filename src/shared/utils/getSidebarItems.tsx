@@ -16,6 +16,11 @@ export const getSidebarItems = (role: ERoles): SideBarItemProps[] => {
           title: "Информация о категориях",
           to: "skills",
         },
+        {
+          icon: <Info />,
+          title: "Войти",
+          to: "login",
+        },
       ];
     case ERoles.Admin:
       return [];

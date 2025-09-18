@@ -1,13 +1,17 @@
 @use "@/app/styles/mixins" as *;
 
 .layout {
-  max-width: 700px;
-  width: 100%;
-  max-height: 700px;
+  max-height: 1200px;
   height: 100%;
 
   .form {
     @include flex(center, flex-start, 20px, column);
     padding: 15px;
+    width: 100%;
+
+    .button {
+      width: 100%;
+      max-width: 250px;
+    }
   }
 }

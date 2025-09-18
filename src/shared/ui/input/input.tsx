@@ -33,7 +33,7 @@ export const Input = (props: InputProps) => {
   };
 
   const input = (
-    <div className={cn(styles.InputWrapper, mods, [className, styles[size]])}>
+    <div className={cn(styles.InputWrapper, mods, className, styles[size])}>
       <div className={styles.addonLeft}>{addonLeft}</div>
       <input
         ref={ref}

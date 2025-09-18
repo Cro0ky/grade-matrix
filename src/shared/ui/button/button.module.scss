@@ -3,7 +3,7 @@
 @use "@/app/styles/colors" as *;
 
 .button {
-  @include flex(center, $gap: 14px);
+  @include flex(center, center, $gap: 14px);
   @include font($size_l, 500, 22px, $black, 0.25px);
   padding: 6px 10px;
   border-radius: 10px;
@@ -23,7 +23,8 @@
   &:disabled {
     pointer-events: none;
     cursor: not-allowed;
-    background-color: #ccc;
+    background-color: rgba(241, 241, 241, 0.49);
+    color: #919191;
   }
 
   .iconContainer {
