@@ -1,4 +1,4 @@
-import type { ButtonProps } from "@/shared/store/selectors/button.types.ts";
+import type { ButtonProps } from "@/shared/types/button.types.ts";
 import cn from "classnames";
 import type { FC } from "react";
 

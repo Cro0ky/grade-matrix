@@ -9,6 +9,7 @@ export const SideBarItem: FC<SideBarItemProps> = ({ title, to, icon }) => {
   const handleNavigate = () => {
     navigate(`/${to}`);
   };
+
   return (
     <div className={styles.item} onClick={handleNavigate}>
       <span className={styles.icon}>{icon}</span>
