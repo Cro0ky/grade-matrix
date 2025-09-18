@@ -2,7 +2,7 @@
 @use "@/app/styles/mixins" as *;
 
 .item {
-  @include flex(center, flex-start, 6px);
+  @include flex(center, flex-start, 15px);
   @include font(20px, 400, 20px, $black);
   cursor: pointer;
   width: 100%;
@@ -11,7 +11,7 @@
   border-radius: 6px;
 
   &:hover {
-    background-color: rgba(248, 248, 248, 0.42);
+    background-color: rgba(248, 248, 248, 0.663);
   }
 
   .icon {
