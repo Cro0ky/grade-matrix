@@ -1,13 +1,11 @@
 import { TestModal } from "@/features/modals/testModal.tsx";
 import { Layout } from "@/shared/components";
 import { Slot } from "@/shared/components/slot/slot.tsx";
-import { useAppDispatch, useAppSelector } from "@/shared/hooks/reaact-hooks.ts";
+import { useAppSelector } from "@/shared/hooks/reaact-hooks.ts";
 import { selectMyself } from "@/shared/store/selectors/myself.selector.ts";
-import { openModal } from "@/shared/store/slices/modals.slice.ts";
 import { useGetUsersTable } from "@/shared/tables/useGetUsersTable.tsx";
-import { EModalName } from "@/shared/types/modal.types.ts";
 import { POSITIONS } from "@/shared/types/types.ts";
-import { Button, Table } from "@/shared/ui";
+import { Table } from "@/shared/ui";
 import { getFullNameInitials } from "@/shared/utils/getFullnameInitials.ts";
 
 import styles from "./profile.module.scss";
@@ -24,8 +22,6 @@ export const Profile = () => {
     current_position,
     expected_position,
   } = useAppSelector(selectMyself);
-
-  const dispatch = useAppDispatch();
 
   const useGetSlots = () => {
     return (
@@ -80,11 +76,6 @@ export const Profile = () => {
             //   </div>
             // }
             table={table}
-          />
-
-          <Button
-            children={"asdasdasd"}
-            onClick={() => dispatch(openModal(EModalName.TEST))}
           />
         </div>
       </div>
