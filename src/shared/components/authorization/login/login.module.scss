@@ -1,0 +1,12 @@
+@use "@/app/styles/mixins" as *;
+
+.form {
+  @include flex(center, flex-start, 20px, column);
+  padding: 15px;
+  width: 100%;
+
+  .button {
+    width: 100%;
+    max-width: 250px;
+  }
+}

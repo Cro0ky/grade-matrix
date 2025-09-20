@@ -1,0 +1,44 @@
+@use "@/app/styles/mixins" as *;
+@use "@/app/styles/text-size" as *;
+@use "@/app/styles/colors" as *;
+
+.head {
+  @include flex(center, $gap: 10px, $direction: column);
+  width: 270px;
+  margin: 0 auto;
+  position: relative;
+
+  .tabs {
+    @include flex(center, space-between, 20px);
+    width: 270px;
+
+    .tab {
+      @include flex(center, center);
+      @include font($size_l, 500, $color: $black);
+      cursor: pointer;
+      width: 100%;
+
+      &.isActive {
+        font-weight: 800;
+      }
+    }
+  }
+
+  .line {
+    border-bottom: 2px solid #000;
+    height: 3px;
+    width: 35%;
+    position: absolute;
+    top: 34px;
+    left: 10px;
+    transition: 0.4s;
+  }
+
+
+  .isActiveLine {
+    width: 49%;
+
+    left: 140px;
+    transition: 0.4s;
+  }
+}

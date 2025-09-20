@@ -1,4 +1,4 @@
-import { SkillsMapper } from "@/pages/skills/utils/skills.mapper.tsx";
+import { SkillsMapper } from "@/pages/skills/components/skills.mapper.tsx";
 import { Layout } from "@/shared/components";
 import { useAppSelector } from "@/shared/hooks/reaact-hooks.ts";
 import { selectHardSkills } from "@/shared/store/selectors/skills.selector.ts";

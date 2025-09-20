@@ -18,8 +18,8 @@ export const getSidebarItems = (role: ERoles): SideBarItemProps[] => {
         },
         {
           icon: <Info />,
-          title: "Войти",
-          to: "login",
+          title: "Авторизация",
+          to: "authorization",
         },
       ];
     case ERoles.Admin:
