@@ -13,7 +13,7 @@ import styles from "./sidebar.module.scss";
 export const Sidebar = () => {
   const { role } = useAppSelector(selectMyself);
   const itemsList: SideBarItemProps[] = getSidebarItems(role);
-  const [isCollapsed, setIsCollapsed] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
     <div

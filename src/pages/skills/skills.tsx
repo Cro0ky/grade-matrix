@@ -1,13 +1,16 @@
 import { SkillsMapper } from "@/pages/skills/utils/skills.mapper.tsx";
 import { Layout } from "@/shared/components";
 import { useAppSelector } from "@/shared/hooks/reaact-hooks.ts";
-import { selectHardSkills } from "@/shared/store/selectors/skills.selector.ts";
+import {
+  selectHardSkills,
+  selectSoftSkills,
+} from "@/shared/store/selectors/skills.selector.ts";
 
 import styles from "./skills.module.scss";
 
 export const Skills = () => {
   const hardSkills = useAppSelector(selectHardSkills);
-  const softSkills = useAppSelector(selectHardSkills);
+  const softSkills = useAppSelector(selectSoftSkills);
   return (
     <Layout title="Категории и навыки">
       <div className={styles.wrapper}>
