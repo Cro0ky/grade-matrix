@@ -7,18 +7,6 @@
   width: 100%;
 }
 
-.slots {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 20px;
-  width: 100%;
-
-  .slot {
-    width: 100%;
-  }
-}
-
 .content {
   width: 100%;
   @include flex($gap: 100px, $direction: column);

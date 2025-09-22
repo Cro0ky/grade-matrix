@@ -9,9 +9,11 @@ import styles from "./layout.module.scss";
 
 interface LayoutProps extends HTMLAttributes<HTMLDivElement> {
   title?: string;
+  isShowCloseButton?: boolean;
 }
 
 export const Layout: FC<LayoutProps> = ({
+  isShowCloseButton = true,
   children,
   className,
   title,
@@ -24,11 +26,13 @@ export const Layout: FC<LayoutProps> = ({
       <Sidebar />
       <div className={styles.head}>
         {title && <span className={styles.title}>{title}</span>}
-        <Button
-          children={<UndoIcon />}
-          className={styles.close_button}
-          onClick={() => navigate("/")}
-        />
+        {isShowCloseButton && (
+          <Button
+            children={<UndoIcon />}
+            className={styles.close_button}
+            onClick={() => navigate("/")}
+          />
+        )}
       </div>
 
       <div className={styles.children}>{children}</div>

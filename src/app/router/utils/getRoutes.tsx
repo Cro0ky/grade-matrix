@@ -1,4 +1,4 @@
-import { Login, Profile, Skills } from "@/pages";
+import { Authorization, Profile, Skills } from "@/pages";
 import { ERoles } from "@/shared/types/types.ts";
 
 export const getRoutes = (role: ERoles) => {
@@ -14,8 +14,8 @@ export const getRoutes = (role: ERoles) => {
           element: <Skills />,
         },
         {
-          path: "/login",
-          element: <Login />,
+          path: "/authorization",
+          element: <Authorization />,
         },
         {
           path: "*",

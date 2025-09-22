@@ -1,53 +1,23 @@
 import { TestModal } from "@/features/modals/testModal.tsx";
+import { ProfileInfo } from "@/pages/profile/components/profile-info/profile-info.tsx";
 import { Layout } from "@/shared/components";
-import { Slot } from "@/shared/components/slot/slot.tsx";
 import { useAppSelector } from "@/shared/hooks/reaact-hooks.ts";
 import { selectMyself } from "@/shared/store/selectors/myself.selector.ts";
 import { useGetUsersTable } from "@/shared/tables/useGetUsersTable.tsx";
-import { POSITIONS } from "@/shared/types/types.ts";
 import { Table } from "@/shared/ui";
-import { getFullNameInitials } from "@/shared/utils/getFullnameInitials.ts";
 
 import styles from "./profile.module.scss";
 
 export const Profile = () => {
   const { table } = useGetUsersTable();
 
-  const {
-    surname,
-    name,
-    patronymic,
-    hard_skills,
-    soft_skills,
-    current_position,
-    expected_position,
-  } = useAppSelector(selectMyself);
-
-  const useGetSlots = () => {
-    return (
-      <div className={styles.slots}>
-        <Slot className={styles.slot}>
-          ФИО: {getFullNameInitials(surname, name, patronymic)}
-        </Slot>
-        <Slot className={styles.slot}>
-          Hard: {hard_skills} Soft: {soft_skills}
-        </Slot>
-        <Slot className={styles.slot}>
-          Фактическая должность: {POSITIONS[current_position]}
-        </Slot>
-        <Slot className={styles.slot}>
-          Ожидаемая должность:{" "}
-          {expected_position ? POSITIONS[expected_position] : "Не обозначена"}
-        </Slot>
-      </div>
-    );
-  };
+  const user = useAppSelector(selectMyself);
 
   return (
-    <Layout title="Профиль">
+    <Layout title="Профиль" isShowCloseButton={false}>
       <div className={styles.wrapper}>
         <div className={styles.content}>
-          {useGetSlots()}
+          <ProfileInfo user={user} />
 
           <Table
             // loader={

@@ -51,3 +51,5 @@ export interface ICategory {
   category: string;
   skills: ISkill[];
 }
+
+export type TAuthorizationState = "login" | "registration";
