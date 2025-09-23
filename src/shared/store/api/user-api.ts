@@ -12,7 +12,22 @@ export const userApi = createApi({
     getUsers: builder.query<IUser, void>({
       query: () => `/me`,
     }),
+
+    login: builder.mutation<
+      { access_token: string },
+      { login: string; password: string }
+    >({
+      query: (body) => ({
+        url: "/login",
+        method: "POST",
+        body,
+      }),
+      transformResponse: () => {
+        return { access_token: "access_token_123" };
+      },
+    }),
   }),
 });
 
-export const { useGetMySelfQuery, useGetUsersQuery } = userApi;
+export const { useGetMySelfQuery, useGetUsersQuery, useLoginMutation } =
+  userApi;

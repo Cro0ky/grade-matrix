@@ -20,11 +20,11 @@ export const Authorization = () => {
       title={"Войдите в аккаунт"}
       isShowCloseButton={false}
     >
-      <AuthorizationTabs
-        onChangeTab={handleChangeTab}
-        authorizationState={authorizationState}
-      />
       <div className={styles.wrapper}>
+        <AuthorizationTabs
+          onChangeTab={handleChangeTab}
+          authorizationState={authorizationState}
+        />
         {authorizationState === "login" ? <Login /> : <Registration />}
       </div>
     </Layout>

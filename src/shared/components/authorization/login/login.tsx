@@ -1,4 +1,5 @@
 import { useLoginSchema } from "@/shared/schemes/login.schema.ts";
+import { useLoginMutation } from "@/shared/store/api/user-api.ts";
 import { Button } from "@/shared/ui";
 import { Input } from "@/shared/ui/input/input.tsx";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -8,6 +9,8 @@ import type z from "zod";
 import styles from "./login.module.scss";
 
 export const Login = () => {
+  const [handleLogin] = useLoginMutation();
+
   const { loginSchema } = useLoginSchema();
   type PersonalDataSchema = z.infer<typeof loginSchema>;
   const {
@@ -22,7 +25,10 @@ export const Login = () => {
   });
 
   const onSubmit = (data: PersonalDataSchema) => {
-    console.log(data);
+    handleLogin(data).then((res) => {
+      if (res.data)
+        localStorage.setItem("access_token", res.data.access_token ?? "");
+    });
   };
 
   return (

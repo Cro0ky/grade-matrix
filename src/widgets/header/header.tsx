@@ -1,3 +1,4 @@
+import { useGetToken } from "@/shared/utils/useGetToken.ts";
 import { User } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -5,6 +6,7 @@ import styles from "./header.module.scss";
 
 export const Header = () => {
   const navigate = useNavigate();
+  const { token } = useGetToken();
 
   return (
     <header className={styles.header}>
@@ -13,9 +15,11 @@ export const Header = () => {
           Матрица грейдов ССР
         </span>
 
-        <nav className={styles.dropdown}>
-          <User />
-        </nav>
+        {token && (
+          <nav className={styles.dropdown}>
+            <User />
+          </nav>
+        )}
       </div>
     </header>
   );

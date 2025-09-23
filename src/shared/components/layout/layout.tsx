@@ -1,4 +1,5 @@
 import { Button } from "@/shared/ui/button/button.tsx";
+import { useGetToken } from "@/shared/utils/useGetToken.ts";
 import { Header, Sidebar } from "@/widgets";
 import cn from "classnames";
 import { UndoIcon } from "lucide-react";
@@ -20,10 +21,11 @@ export const Layout: FC<LayoutProps> = ({
   ...props
 }) => {
   const navigate = useNavigate();
+  const { token } = useGetToken();
   return (
     <div className={cn(styles.layout, className)} {...props}>
       <Header />
-      <Sidebar />
+      {token && <Sidebar />}
       <div className={styles.head}>
         {title && <span className={styles.title}>{title}</span>}
         {isShowCloseButton && (
